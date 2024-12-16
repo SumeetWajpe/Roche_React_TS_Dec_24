@@ -13,4 +13,15 @@ var arr: string[] = ["React", "Redux", "Angular"];
 var companies: string[] = new Array<string>();
 // companies[0] = 100;
 
+// Creating variables
 
+// let -> ES6
+
+if (true) {
+  let x: number = 1000; // block scoping
+  // after 10 lines of code
+  console.log(x);
+}
+let x: number = 100;
+
+console.log(x);
