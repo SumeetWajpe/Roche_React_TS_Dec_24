@@ -43,7 +43,31 @@
 
 /// with Arrays
 
+// var techs: string[] = ["React", "Redux", "Angular"];
+// let otherTechs: string[] = ["C#", "Kubenetes", "GraphQL"];
+// let allTechs: string[] = [...techs, ...otherTechs, "HTML5"];
+// console.log(allTechs);
+
+// Destructuring
+// With Array
 var techs: string[] = ["React", "Redux", "Angular"];
-let otherTechs: string[] = ["C#", "Kubenetes", "GraphQL"];
-let allTechs: string[] = [...techs, ...otherTechs, "HTML5"];
-console.log(allTechs);
+// let firsttech: string = techs[0];
+// let secondtech: string = techs[1];
+
+// OR
+let [firsttech, , thirdtech, fourthtech = "CSS3"] = techs;
+console.log(fourthtech);
+
+// With Objects
+let person = {
+  fname: "Carloz",
+  lname: "Alcaraz",
+  age: 20,
+  sport: "Tennis",
+  isWimbledonChampion: true,
+};
+
+// let fname: string = person.fname;
+// let sport = person.sport;
+
+let { fname, age, sport } = person;

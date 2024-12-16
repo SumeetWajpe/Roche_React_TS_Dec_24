@@ -3,15 +3,6 @@
 // str = "Hello TS !";
 // str = 10;
 // console.log(str);
-var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
-    if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
-        if (ar || !(i in from)) {
-            if (!ar) ar = Array.prototype.slice.call(from, 0, i);
-            ar[i] = from[i];
-        }
-    }
-    return to.concat(ar || Array.prototype.slice.call(from));
-};
 // var b: boolean;
 // var n: number;
 // var a: any;
@@ -42,7 +33,26 @@ var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
 // let player = { ...person, sport: "Tennis", isWimbledonChampion: true };
 // console.log(player);
 /// with Arrays
+// var techs: string[] = ["React", "Redux", "Angular"];
+// let otherTechs: string[] = ["C#", "Kubenetes", "GraphQL"];
+// let allTechs: string[] = [...techs, ...otherTechs, "HTML5"];
+// console.log(allTechs);
+// Destructuring
+// With Array
 var techs = ["React", "Redux", "Angular"];
-var otherTechs = ["C#", "Kubenetes", "GraphQL"];
-var allTechs = __spreadArray(__spreadArray(__spreadArray([], techs, true), otherTechs, true), ["HTML5"], false);
-console.log(allTechs);
+// let firsttech: string = techs[0];
+// let secondtech: string = techs[1];
+// OR
+var firsttech = techs[0], thirdtech = techs[2], _a = techs[3], fourthtech = _a === void 0 ? "CSS3" : _a;
+console.log(fourthtech);
+// With Objects
+var person = {
+    fname: "Carloz",
+    lname: "Alcaraz",
+    age: 20,
+    sport: "Tennis",
+    isWimbledonChampion: true,
+};
+// let fname: string = person.fname;
+// let sport = person.sport;
+var fname = person.fname, age = person.age, sport = person.sport;
