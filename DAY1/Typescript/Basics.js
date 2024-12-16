@@ -49,10 +49,14 @@ console.log(fourthtech);
 var person = {
     fname: "Carloz",
     lname: "Alcaraz",
-    age: 20,
     sport: "Tennis",
-    isWimbledonChampion: true,
+    age: 20,
+    stats: {
+        ranking: 3,
+        isWimbledonChampion: true,
+    },
 };
 // let fname: string = person.fname;
 // let sport = person.sport;
-var fname = person.fname, age = person.age, sport = person.sport;
+var fname = person.fname, age = person.age, sport = person.sport, ranking = person.stats.ranking;
+console.log(ranking);
