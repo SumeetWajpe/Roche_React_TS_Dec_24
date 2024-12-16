@@ -12,13 +12,21 @@
     <div id="root"></div>
 
     <script type="text/jsx">
-      let sectionElement = <section>
-        <h1> Hello JSX !</h1>
-        <p> This is para ! </p>
-        </section>
 
+        class BasicComponent extends React.Component{
+            render(){
+                return <h1> Hello Component </h1>
+            }
+        }
 
-      ReactDOM.render(sectionElement, document.getElementById("root"));
+        let basicCompInstance = <div>
+            <BasicComponent/>
+            <BasicComponent/>
+            <BasicComponent/>
+            <BasicComponent/>
+        </div>
+
+      ReactDOM.render(basicCompInstance, document.getElementById("root"));
     </script>
   </body>
 </html>
