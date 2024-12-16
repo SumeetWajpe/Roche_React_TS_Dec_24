@@ -59,7 +59,30 @@ let [firsttech, , thirdtech, fourthtech = "CSS3"] = techs;
 console.log(fourthtech);
 
 // With Objects
-let person = {
+// let person = {
+//   fname: "Carloz",
+//   lname: "Alcaraz",
+//   sport: "Tennis",
+//   age: 20,
+//   stats: {
+//     ranking: 3,
+//     isWimbledonChampion: undefined,
+//   },
+// };
+
+// // let fname: string = person.fname;
+// // let sport = person.sport;
+
+// let {
+//   fname,
+//   age,
+//   sport,
+//   stats: { ranking, isWimbledonChampion: RANK = false },
+// } = person;
+
+// console.log(ranking, RANK);
+
+let player = {
   fname: "Carloz",
   lname: "Alcaraz",
   sport: "Tennis",
@@ -70,14 +93,9 @@ let person = {
   },
 };
 
-// let fname: string = person.fname;
-// let sport = person.sport;
+function PrintPlayer({ fname, sport, stats: { ranking } }) {
+  //   p.fname = "XYZ";
+  console.log(`The player ${fname} plays ${sport}`);
+}
 
-let {
-  fname,
-  age,
-  sport,
-  stats: { ranking, isWimbledonChampion: RANK = false },
-} = person;
-
-console.log(ranking, RANK);
+PrintPlayer(player);

@@ -46,7 +46,26 @@ var techs = ["React", "Redux", "Angular"];
 var firsttech = techs[0], thirdtech = techs[2], _a = techs[3], fourthtech = _a === void 0 ? "CSS3" : _a;
 console.log(fourthtech);
 // With Objects
-var person = {
+// let person = {
+//   fname: "Carloz",
+//   lname: "Alcaraz",
+//   sport: "Tennis",
+//   age: 20,
+//   stats: {
+//     ranking: 3,
+//     isWimbledonChampion: undefined,
+//   },
+// };
+// // let fname: string = person.fname;
+// // let sport = person.sport;
+// let {
+//   fname,
+//   age,
+//   sport,
+//   stats: { ranking, isWimbledonChampion: RANK = false },
+// } = person;
+// console.log(ranking, RANK);
+var player = {
     fname: "Carloz",
     lname: "Alcaraz",
     sport: "Tennis",
@@ -56,7 +75,9 @@ var person = {
         isWimbledonChampion: undefined,
     },
 };
-// let fname: string = person.fname;
-// let sport = person.sport;
-var fname = person.fname, age = person.age, sport = person.sport, _b = person.stats, ranking = _b.ranking, _c = _b.isWimbledonChampion, RANK = _c === void 0 ? false : _c;
-console.log(ranking, RANK);
+function PrintPlayer(_a) {
+    var fname = _a.fname, sport = _a.sport, ranking = _a.stats.ranking;
+    //   p.fname = "XYZ";
+    console.log("The player ".concat(fname, " plays ").concat(sport));
+}
+PrintPlayer(player);
