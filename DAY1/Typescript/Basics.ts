@@ -149,12 +149,42 @@ var company: Company = {
 class Car {
   name: string;
   speed: number;
-  constructor(name: string = "BMW", speed: number = 200) {
+  constructor(name: string = "BMW", speed: number = 100) {
     this.name = name;
     this.speed = speed;
   }
+
+  accelerate(): string {
+    // console.log(
+    //   "The car " + this.name + " is running @ " + this.speed + " kmph !",
+    // );
+    // ES 6 Template literals
+    return `The car ${this.name} is running @ ${this.speed} kmph !`;
+  }
 }
 
-let carObj = new Car();
-// carObj.name = "Ertiga";
-// carObj.speed = 100;
+class JamesBondCar extends Car {
+  canFly: boolean;
+  constructor(name: string, speed: number, canFly: boolean) {
+    super();
+    this.name = name;
+    this.speed = speed;
+    this.canFly = canFly;
+  }
+
+  accelerate(): string {
+    return super.accelerate() + "Can it fly ? : " + this.canFly;
+  }
+}
+
+var jbc = new JamesBondCar("Aston Martin", 300, true);
+console.log(jbc.accelerate());
+
+// let carObj = new Car();
+// carObj.accelerate();
+
+// let multilineStr = `First Line
+// Second Line !
+// Last Line !
+// `;
+// console.log(multilineStr);
