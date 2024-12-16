@@ -65,19 +65,51 @@ console.log(fourthtech);
 //   stats: { ranking, isWimbledonChampion: RANK = false },
 // } = person;
 // console.log(ranking, RANK);
-var player = {
-    fname: "Carloz",
-    lname: "Alcaraz",
-    sport: "Tennis",
-    age: 20,
-    stats: {
-        ranking: 3,
-        isWimbledonChampion: undefined,
-    },
-};
-function PrintPlayer(_a) {
-    var fname = _a.fname, sport = _a.sport, ranking = _a.stats.ranking;
-    //   p.fname = "XYZ";
-    console.log("The player ".concat(fname, " plays ").concat(sport));
+// let player = {
+//   fname: "Carloz",
+//   lname: "Alcaraz",
+//   sport: "Tennis",
+//   age: 20,
+//   stats: {
+//     ranking: 3,
+//     isWimbledonChampion: undefined,
+//   },
+// };
+// function PrintPlayer({ fname, sport }) {
+//   //   p.fname = "XYZ";
+//   console.log(`The player ${fname} plays ${sport}`);
+// }
+// PrintPlayer(player);
+function GetPlayer() {
+    return {
+        fname: "Carloz",
+        lname: "Alcaraz",
+        sport: "Tennis",
+        age: 20,
+        stats: {
+            ranking: 3,
+            isWimbledonChampion: undefined,
+        },
+    };
 }
-PrintPlayer(player);
+// let player = GetPlayer();
+var _b = GetPlayer(), fname = _b.fname, sport = _b.sport;
+var company = {
+    name: "Roche",
+    location: "Baner",
+    //   xyz: 123,
+    getDetails: function (n) { return n; },
+};
+// Class
+var Car = /** @class */ (function () {
+    function Car(name, speed) {
+        if (name === void 0) { name = "BMW"; }
+        if (speed === void 0) { speed = 200; }
+        this.name = name;
+        this.speed = speed;
+    }
+    return Car;
+}());
+var carObj = new Car();
+// carObj.name = "Ertiga";
+// carObj.speed = 100;

@@ -82,20 +82,79 @@ console.log(fourthtech);
 
 // console.log(ranking, RANK);
 
-let player = {
-  fname: "Carloz",
-  lname: "Alcaraz",
-  sport: "Tennis",
-  age: 20,
-  stats: {
-    ranking: 3,
-    isWimbledonChampion: undefined,
-  },
-};
+// let player = {
+//   fname: "Carloz",
+//   lname: "Alcaraz",
+//   sport: "Tennis",
+//   age: 20,
+//   stats: {
+//     ranking: 3,
+//     isWimbledonChampion: undefined,
+//   },
+// };
 
-function PrintPlayer({ fname, sport, stats: { ranking } }) {
-  //   p.fname = "XYZ";
-  console.log(`The player ${fname} plays ${sport}`);
+// function PrintPlayer({ fname, sport }) {
+//   //   p.fname = "XYZ";
+//   console.log(`The player ${fname} plays ${sport}`);
+// }
+
+// PrintPlayer(player);
+
+function GetPlayer() {
+  return {
+    fname: "Carloz",
+    lname: "Alcaraz",
+    sport: "Tennis",
+    age: 20,
+    stats: {
+      ranking: 3,
+      isWimbledonChampion: undefined,
+    },
+  };
 }
 
-PrintPlayer(player);
+// let player = GetPlayer();
+let { fname, sport } = GetPlayer();
+
+// Object Oriented
+
+// INterface
+// interface ICompany {
+//   name: string;
+//   location: string;
+//   city: string;
+// }
+// var company: ICompany = {
+//   name: "Roche",
+//   location: "Baner",
+//   city: "Pune",
+//   xyz: 123,
+// };
+
+type Company = {
+  name: string;
+  location: string;
+  city?: string;
+  getDetails?: (n: number) => number;
+};
+var company: Company = {
+  name: "Roche",
+  location: "Baner",
+  //   xyz: 123,
+  getDetails: n => n,
+};
+
+// Class
+
+class Car {
+  name: string;
+  speed: number;
+  constructor(name: string = "BMW", speed: number = 200) {
+    this.name = name;
+    this.speed = speed;
+  }
+}
+
+let carObj = new Car();
+// carObj.name = "Ertiga";
+// carObj.speed = 100;
