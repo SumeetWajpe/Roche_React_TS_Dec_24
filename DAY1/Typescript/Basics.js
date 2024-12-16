@@ -109,12 +109,31 @@ function GetPlayer() {
 }
 // let player = GetPlayer();
 var _b = GetPlayer(), fname = _b.fname, sport = _b.sport;
-var company = {
-    name: "Roche",
-    location: "Baner",
-    //   xyz: 123,
-    getDetails: function (n) { return n; },
-};
+// Object Oriented
+// INterface
+// interface ICompany {
+//   name: string;
+//   location: string;
+//   city: string;
+// }
+// var company: ICompany = {
+//   name: "Roche",
+//   location: "Baner",
+//   city: "Pune",
+//   xyz: 123,
+// };
+// type Company = {
+//   name: string;
+//   location: string;
+//   city?: string;
+//   getDetails?: (n: number) => number;
+// };
+// var company: Company = {
+//   name: "Roche",
+//   location: "Baner",
+//   //   xyz: 123,
+//   getDetails: n => n,
+// };
 // Class
 var Car = /** @class */ (function () {
     function Car(name, speed) {
@@ -135,9 +154,7 @@ var Car = /** @class */ (function () {
 var JamesBondCar = /** @class */ (function (_super) {
     __extends(JamesBondCar, _super);
     function JamesBondCar(name, speed, canFly) {
-        var _this = _super.call(this) || this;
-        _this.name = name;
-        _this.speed = speed;
+        var _this = _super.call(this, name, speed) || this;
         _this.canFly = canFly;
         return _this;
     }
@@ -155,3 +172,38 @@ console.log(jbc.accelerate());
 // Last Line !
 // `;
 // console.log(multilineStr);
+// interface ICompanyType {
+//   isProprietorship: boolean;
+// }
+// interface ICompany {
+//   name: string;
+//   location: string;
+//   city: string;
+// }
+// class CCompany implements ICompany, ICompanyType {
+//   name: string;
+//   location: string;
+//   city: string;
+//   isProprietorship: boolean;
+// }
+// Enhanced Class Syntax
+var EnhancedCar = /** @class */ (function () {
+    function EnhancedCar(id, name, speed) {
+        if (id === void 0) { id = 1; }
+        if (name === void 0) { name = "BMW"; }
+        if (speed === void 0) { speed = 200; }
+        this.id = id;
+        this.name = name;
+        this.speed = speed;
+    }
+    return EnhancedCar;
+}());
+var ec = new EnhancedCar();
+// Generics
+function Swap(x, y) {
+    var temp;
+    temp = x;
+    x = y;
+    y = temp;
+}
+Swap(20, 30);

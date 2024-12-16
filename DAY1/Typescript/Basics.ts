@@ -131,24 +131,25 @@ let { fname, sport } = GetPlayer();
 //   xyz: 123,
 // };
 
-type Company = {
-  name: string;
-  location: string;
-  city?: string;
-  getDetails?: (n: number) => number;
-};
-var company: Company = {
-  name: "Roche",
-  location: "Baner",
-  //   xyz: 123,
-  getDetails: n => n,
-};
+// type Company = {
+//   name: string;
+//   location: string;
+//   city?: string;
+//   getDetails?: (n: number) => number;
+// };
+// var company: Company = {
+//   name: "Roche",
+//   location: "Baner",
+//   //   xyz: 123,
+//   getDetails: n => n,
+// };
 
 // Class
 
 class Car {
-  name: string;
-  speed: number;
+  private id: number;
+  public name: string;
+  public speed: number;
   constructor(name: string = "BMW", speed: number = 100) {
     this.name = name;
     this.speed = speed;
@@ -166,9 +167,7 @@ class Car {
 class JamesBondCar extends Car {
   canFly: boolean;
   constructor(name: string, speed: number, canFly: boolean) {
-    super();
-    this.name = name;
-    this.speed = speed;
+    super(name, speed);
     this.canFly = canFly;
   }
 
@@ -188,3 +187,43 @@ console.log(jbc.accelerate());
 // Last Line !
 // `;
 // console.log(multilineStr);
+
+// interface ICompanyType {
+//   isProprietorship: boolean;
+// }
+
+// interface ICompany {
+//   name: string;
+//   location: string;
+//   city: string;
+// }
+
+// class CCompany implements ICompany, ICompanyType {
+//   name: string;
+//   location: string;
+//   city: string;
+//   isProprietorship: boolean;
+// }
+
+// Enhanced Class Syntax
+
+class EnhancedCar {
+  constructor(
+    private id: number = 1,
+    public name: string = "BMW",
+    public speed: number = 200,
+  ) {}
+}
+
+var ec = new EnhancedCar();
+
+// Generics
+
+function Swap<T>(x: T, y: T) {
+  let temp: T;
+  temp = x;
+  x = y;
+  y = temp;
+}
+
+Swap<number>(20, 30);
