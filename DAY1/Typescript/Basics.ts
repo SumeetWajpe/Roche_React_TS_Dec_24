@@ -227,3 +227,23 @@ function Swap<T>(x: T, y: T) {
 }
 
 Swap<number>(20, 30);
+Swap<string>("Hello", "World ");
+
+class CoOrd {}
+
+class Point<T, V> {
+  x: T;
+  y: V;
+}
+
+var pointToBeNoted = new Point<CoOrd, string>();
+
+var languages = new Array<string>();
+
+let t: boolean = true;
+
+function Test(x) {
+  console.log(x);
+}
+
+Test(10);
