@@ -66,7 +66,7 @@ let person = {
   age: 20,
   stats: {
     ranking: 3,
-    isWimbledonChampion: true,
+    isWimbledonChampion: undefined,
   },
 };
 
@@ -77,7 +77,7 @@ let {
   fname,
   age,
   sport,
-  stats: { ranking },
+  stats: { ranking, isWimbledonChampion: RANK = false },
 } = person;
 
-console.log(ranking);
+console.log(ranking, RANK);

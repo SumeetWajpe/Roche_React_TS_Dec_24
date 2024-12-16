@@ -53,10 +53,10 @@ var person = {
     age: 20,
     stats: {
         ranking: 3,
-        isWimbledonChampion: true,
+        isWimbledonChampion: undefined,
     },
 };
 // let fname: string = person.fname;
 // let sport = person.sport;
-var fname = person.fname, age = person.age, sport = person.sport, ranking = person.stats.ranking;
-console.log(ranking);
+var fname = person.fname, age = person.age, sport = person.sport, _b = person.stats, ranking = _b.ranking, _c = _b.isWimbledonChampion, RANK = _c === void 0 ? false : _c;
+console.log(ranking, RANK);
