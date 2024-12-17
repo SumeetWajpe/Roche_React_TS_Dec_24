@@ -100,21 +100,21 @@ console.log(fourthtech);
 
 // PrintPlayer(player);
 
-function GetPlayer() {
-  return {
-    fname: "Carloz",
-    lname: "Alcaraz",
-    sport: "Tennis",
-    age: 20,
-    stats: {
-      ranking: 3,
-      isWimbledonChampion: undefined,
-    },
-  };
-}
+// function GetPlayer() {
+//   return {
+//     fname: "Carloz",
+//     lname: "Alcaraz",
+//     sport: "Tennis",
+//     age: 20,
+//     stats: {
+//       ranking: 3,
+//       isWimbledonChampion: undefined,
+//     },
+//   };
+// }
 
-// let player = GetPlayer();
-let { fname, sport } = GetPlayer();
+// // let player = GetPlayer();
+// let { fname, sport } = GetPlayer();
 
 // Object Oriented
 
@@ -146,38 +146,38 @@ let { fname, sport } = GetPlayer();
 
 // Class
 
-class Car {
-  private id: number;
-  public name: string;
-  public speed: number;
-  constructor(name: string = "BMW", speed: number = 100) {
-    this.name = name;
-    this.speed = speed;
-  }
+// class Car {
+//   private id: number;
+//   public name: string;
+//   public speed: number;
+//   constructor(name: string = "BMW", speed: number = 100) {
+//     this.name = name;
+//     this.speed = speed;
+//   }
 
-  accelerate(): string {
-    // console.log(
-    //   "The car " + this.name + " is running @ " + this.speed + " kmph !",
-    // );
-    // ES 6 Template literals
-    return `The car ${this.name} is running @ ${this.speed} kmph !`;
-  }
-}
+//   accelerate(): string {
+//     // console.log(
+//     //   "The car " + this.name + " is running @ " + this.speed + " kmph !",
+//     // );
+//     // ES 6 Template literals
+//     return `The car ${this.name} is running @ ${this.speed} kmph !`;
+//   }
+// }
 
-class JamesBondCar extends Car {
-  canFly: boolean;
-  constructor(name: string, speed: number, canFly: boolean) {
-    super(name, speed);
-    this.canFly = canFly;
-  }
+// class JamesBondCar extends Car {
+//   canFly: boolean;
+//   constructor(name: string, speed: number, canFly: boolean) {
+//     super(name, speed);
+//     this.canFly = canFly;
+//   }
 
-  accelerate(): string {
-    return super.accelerate() + "Can it fly ? : " + this.canFly;
-  }
-}
+//   accelerate(): string {
+//     return super.accelerate() + "Can it fly ? : " + this.canFly;
+//   }
+// }
 
-var jbc = new JamesBondCar("Aston Martin", 300, true);
-console.log(jbc.accelerate());
+// var jbc = new JamesBondCar("Aston Martin", 300, true);
+// console.log(jbc.accelerate());
 
 // let carObj = new Car();
 // carObj.accelerate();
@@ -207,43 +207,71 @@ console.log(jbc.accelerate());
 
 // Enhanced Class Syntax
 
-class EnhancedCar {
-  constructor(
-    private id: number = 1,
-    public name: string = "BMW",
-    public speed: number = 200,
-  ) {}
-}
+// class EnhancedCar {
+//   constructor(
+//     private id: number = 1,
+//     public name: string = "BMW",
+//     public speed: number = 200,
+//   ) {}
+// }
 
-var ec = new EnhancedCar();
+// var ec = new EnhancedCar();
 
-// Generics
+// // Generics
 
-function Swap<T>(x: T, y: T) {
-  let temp: T;
-  temp = x;
-  x = y;
-  y = temp;
-}
+// function Swap<T>(x: T, y: T) {
+//   let temp: T;
+//   temp = x;
+//   x = y;
+//   y = temp;
+// }
 
-Swap<number>(20, 30);
-Swap<string>("Hello", "World ");
+// Swap<number>(20, 30);
+// Swap<string>("Hello", "World ");
 
-class CoOrd {}
+// class CoOrd {}
 
-class Point<T, V> {
-  x: T;
-  y: V;
-}
+// class Point<T, V> {
+//   x: T;
+//   y: V;
+// }
 
-var pointToBeNoted = new Point<CoOrd, string>();
+// var pointToBeNoted = new Point<CoOrd, string>();
 
-var languages = new Array<string>();
+// var languages = new Array<string>();
 
-let t: boolean = true;
+// let t: boolean = true;
 
-function Test(x) {
-  console.log(x);
-}
+// function Test(x) {
+//   console.log(x);
+// }
 
-Test(10);
+// Test(10);
+
+// Functions
+// Function Template
+// function Add(x: number, y: number): number {
+//   return x + y;
+// }
+
+// Function as an expression
+// let Add = function (x: number, y: number): number {
+//   return x + y;
+// };
+
+// Arrow function
+// let Add = (x: number, y: number): number => {
+//   return x + y;
+// };
+
+// OR
+let Add = (x: number, y: number) => x + y;
+
+// function Square(x: number): number {
+//   return x * x;
+// }
+
+// Arrow
+let Square = (x: number): number => x * x;
+
+

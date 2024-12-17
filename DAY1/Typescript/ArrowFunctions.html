@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      function Emp() {
+        this.salary = 200000;
+
+        setTimeout(() => {
+          console.log(this);
+        }, 2000);
+        this.salary = 500000;
+      }
+      console.log("Started..");
+      var empObj = new Emp();
+      console.log("Ended..");
+    </script>
+  </head>
+  <body></body>
+</html>
