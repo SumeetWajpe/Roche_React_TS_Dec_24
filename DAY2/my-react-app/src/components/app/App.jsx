@@ -83,11 +83,11 @@ class App extends React.Component {
   ];
   render() {
     return (
-      <>
+      <div >
         {this.messages.map(m => (
           <Message msgdetails={m} />
         ))}
-      </>
+      </div>
     );
   }
 }
