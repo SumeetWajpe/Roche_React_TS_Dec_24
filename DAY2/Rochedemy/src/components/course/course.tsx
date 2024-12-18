@@ -32,7 +32,6 @@ export default class Course extends Component<CourseProps> {
           <div className="card-body">
             <h5 className="card-title">{this.props.coursedetails.title}</h5>
             <p className="cart-text">
-              <Rating noofstars={this.props.coursedetails.rating} />
             </p>
             <p className="card-text">₹. {this.props.coursedetails.price}</p>
             <button
