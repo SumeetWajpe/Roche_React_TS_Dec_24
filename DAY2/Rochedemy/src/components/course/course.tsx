@@ -3,7 +3,7 @@ import { CourseModel } from "../../models/course.model";
 
 type CourseProps = {
   coursedetails: CourseModel;
-  DeleteACourse: () => void;
+  DeleteACourse: (courseId: number) => void;
 };
 
 export default class Course extends Component<CourseProps> {
@@ -50,7 +50,9 @@ export default class Course extends Component<CourseProps> {
 
             <button
               className="btn btn-danger mx-2"
-              onClick={() => this.props.DeleteACourse()}
+              onClick={() =>
+                this.props.DeleteACourse(this.props.coursedetails.id)
+              }
             >
               <i className="fa-solid fa-trash"></i>
             </button>
