@@ -55,7 +55,9 @@ export default class ListOfCourses extends Component {
 
   DeleteACourse(courseId: number) {
     // biz logic for deleting the course
-    console.log("Deleting Course ", courseId);
+    // console.log("Deleting Course ", courseId);
+    let courses = this.state.courses.filter(c => c.id !== courseId);
+    this.setState({ courses });
   }
 
   render() {
@@ -63,6 +65,7 @@ export default class ListOfCourses extends Component {
       <div className="row">
         {this.state.courses.map((course: CourseModel) => (
           <Course
+            key={course.id}
             coursedetails={course}
             DeleteACourse={courseId => this.DeleteACourse(courseId)}
           />

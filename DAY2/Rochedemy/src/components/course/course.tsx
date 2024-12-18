@@ -1,5 +1,6 @@
 import { Component } from "react";
 import { CourseModel } from "../../models/course.model";
+import { Rating } from "../rating/rating";
 
 type CourseProps = {
   coursedetails: CourseModel;
@@ -16,14 +17,7 @@ export default class Course extends Component<CourseProps> {
   }
 
   render() {
-    console.log("Within Render !");
-    var ratings = [];
-
-    for (let index = 0; index < this.props.coursedetails.rating; index++) {
-      ratings.push(
-        <i className="fa-solid fa-star" style={{ color: "orange" }}></i>,
-      );
-    }
+    console.log("Course - Within Render !");
 
     return (
       <div className="col-md-3">
@@ -37,7 +31,9 @@ export default class Course extends Component<CourseProps> {
           />
           <div className="card-body">
             <h5 className="card-title">{this.props.coursedetails.title}</h5>
-            <p className="cart-text">{ratings}</p>
+            <p className="cart-text">
+              <Rating noofstars={this.props.coursedetails.rating} />
+            </p>
             <p className="card-text">₹. {this.props.coursedetails.price}</p>
             <button
               className="btn btn-outline-primary"
