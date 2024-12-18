@@ -50,11 +50,20 @@ export default class ListOfCourses extends Component {
         "https://miro.medium.com/max/2000/1*PCKC8Ufml-wvb9Vjj3aaWw.jpeg",
     },
   ];
+
+  DeleteACourse() {
+    // biz logic for deleting the course
+    console.log("Deleting Course !");
+  }
+
   render() {
     return (
       <div className="row">
         {this.courses.map((course: CourseModel) => (
-          <Course coursedetails={course} />
+          <Course
+            coursedetails={course}
+            DeleteACourse={() => this.DeleteACourse()}
+          />
         ))}
       </div>
     );
