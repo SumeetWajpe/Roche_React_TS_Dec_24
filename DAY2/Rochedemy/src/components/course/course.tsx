@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { CourseModel } from "../../models/course.model";
 import { Rating } from "../rating/rating";
 
@@ -5,6 +6,7 @@ type CourseProps = {
   coursedetails: CourseModel;
 };
 const Course: React.FC<CourseProps> = (props: CourseProps) => {
+  let [currLikes, setCurrLikes] = useState<number>(props.coursedetails.likes);
   return (
     <div className="col-md-3">
       <div className="card m-2 p-2 shadow rounded-0">
@@ -21,9 +23,11 @@ const Course: React.FC<CourseProps> = (props: CourseProps) => {
             <Rating noofstars={props.coursedetails.rating} />
           </p>
           <p className="card-text">₹. {props.coursedetails.price}</p>
-          <button className="btn btn-outline-primary">
-            {props.coursedetails.likes}{" "}
-            <i className="fa-regular fa-thumbs-up"></i>
+          <button
+            className="btn btn-outline-primary"
+            onClick={() => setCurrLikes(currLikes + 1)}
+          >
+            {currLikes} <i className="fa-regular fa-thumbs-up"></i>
           </button>
 
           <button className="btn btn-danger mx-2">

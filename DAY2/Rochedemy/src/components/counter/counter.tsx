@@ -1,8 +1,13 @@
 import React, { useState } from "react";
 
+type StateDataType = {
+  count: number;
+  age: number;
+};
+
 const Counter: React.FC = () => {
-  let [data, setData] = useState({ count: 100, age: 18 });
-  //   let [count, setCount] = useState(100);
+  let [data, setData] = useState<StateDataType>({ count: 100, age: 18 });
+  //   let [count, setCount] = useState<number>(100);
   //   let [age, setAge] = useState(18);
 
   return (

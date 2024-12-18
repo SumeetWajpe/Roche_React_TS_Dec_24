@@ -1,12 +1,15 @@
 import React from "react";
 
-import "./App.css";
 import ListOfCourses from "../listofcourses/listofcourses";
 import Counter from "../counter/counter";
+import Posts from "../posts/posts";
+import GetPostById from "../getpostbyid/getpostbyid";
 
 const App: React.FC = () => {
-  // return <ListOfCourses />;
-  return <Counter />;
+  return <ListOfCourses />;
+  // return <Counter />;
+  // return <Posts />;
+  // return <GetPostById />;
 };
 
 export default App;
