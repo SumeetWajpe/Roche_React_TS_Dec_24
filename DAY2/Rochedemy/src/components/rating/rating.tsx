@@ -18,6 +18,7 @@ type RatingProps = {
 //   return <>{ratings}</>;
 // }
 
+// The Typescript way
 export const Rating: React.FC<RatingProps> = (props: RatingProps) => {
   var ratings = [];
   for (let index = 0; index < props.noofstars; index++) {
