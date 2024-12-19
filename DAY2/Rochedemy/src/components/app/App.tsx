@@ -6,6 +6,7 @@ import Posts from "../posts/posts";
 import GetPostById from "../getpostbyid/getpostbyid";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Navbar from "../navbar/navbar";
+import CourseDetails from "../coursedetails/coursedetails";
 
 const App: React.FC = () => {
   return (
@@ -13,8 +14,10 @@ const App: React.FC = () => {
       <Navbar />
       <Routes>
         <Route path="/" Component={ListOfCourses}></Route>
+        <Route path="/coursedetails/:cid" Component={CourseDetails}></Route>
         <Route path="/posts" Component={Posts}></Route>
         <Route path="/getpostbyid" Component={GetPostById}></Route>
+
         <Route
           path="*"
           element={
