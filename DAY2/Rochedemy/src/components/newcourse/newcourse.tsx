@@ -2,7 +2,11 @@ import React from "react";
 import { useForm } from "react-hook-form";
 
 const NewCourse = () => {
-  const { handleSubmit, register } = useForm();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({ mode: "onChange" });
   return (
     <>
       <header>
@@ -18,19 +22,38 @@ const NewCourse = () => {
             <div className="col-md-3">
               <input
                 type="number"
-                {...register("id")}
+                {...register("id", { required: "The course id is required !" })}
                 placeholder="Course Id"
               />
             </div>
+            {errors.id ? (
+              <span style={{ color: "red" }}>
+                {errors.id.message?.toString()}
+              </span>
+            ) : (
+              ""
+            )}
           </div>
           <div className="row m-1">
             <div className="col-md-3">
               <input
                 type="text"
-                {...register("title")}
+                {...register("title", {
+                  maxLength: {
+                    value: 20,
+                    message: "You exceeded 20 characters",
+                  },
+                })}
                 placeholder="Course Title"
               />
             </div>
+            {errors.title ? (
+              <span style={{ color: "red" }}>
+                {errors.title.message?.toString()}
+              </span>
+            ) : (
+              ""
+            )}
           </div>
           <div className="row m-1">
             <div className="col-md-3">
@@ -72,6 +95,7 @@ const NewCourse = () => {
             <div className="col-md-3">
               <textarea
                 rows={5}
+                cols={20}
                 {...register("description")}
                 placeholder="Course Description"
               />
