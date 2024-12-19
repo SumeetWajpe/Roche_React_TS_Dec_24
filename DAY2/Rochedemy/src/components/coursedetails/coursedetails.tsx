@@ -13,7 +13,7 @@ const CourseDetails: React.FC = () => {
     axios
       .get("http://localhost:3500/courses/" + cid)
       .then(response => setTheCourse(response.data));
-  });
+  }, []);
   return (
     <div>
       <header>
