@@ -5,10 +5,12 @@ import Counter from "../counter/counter";
 import Posts from "../posts/posts";
 import GetPostById from "../getpostbyid/getpostbyid";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Navbar from "../navbar/navbar";
 
 const App: React.FC = () => {
   return (
     <BrowserRouter>
+      <Navbar />
       <Routes>
         <Route path="/" Component={ListOfCourses}></Route>
         <Route path="/posts" Component={Posts}></Route>
