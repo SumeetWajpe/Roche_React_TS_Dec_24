@@ -10,6 +10,7 @@ const GetPostById = () => {
     body: "",
   });
   useEffect(() => {
+    // make utility functions & resuse
     axios
       .get(`https://jsonplaceholder.typicode.com/posts/${postId}`)
       .then(response => {

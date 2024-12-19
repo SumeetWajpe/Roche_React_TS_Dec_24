@@ -6,5 +6,6 @@ export class CourseModel {
     public rating: number,
     public likes: number,
     public imageUrl: string,
+    public description: string,
   ) {}
 }
