@@ -69,7 +69,11 @@ const coursesSlice = createSlice({
       store[index].likes++; // immer allows us to mutate the store and it creates a newer store object
       return store; // updated store
     },
+    AddNewCourse(store: CourseModel[], action: PayloadAction<CourseModel>) {
+      store.push(action.payload);
+      return store;
+    },
   },
 });
-export const { IncrementLikes } = coursesSlice.actions;
+export const { IncrementLikes, AddNewCourse } = coursesSlice.actions;
 export default coursesSlice.reducer;

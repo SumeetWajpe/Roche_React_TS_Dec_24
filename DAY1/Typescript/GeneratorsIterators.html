@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      // var arr = [10, 20, 30, 40];
+      //   let itr = arr[Symbol.iterator]();
+      //   console.log(itr.next());
+      //   console.log(itr.next());
+
+      function* Generator() {
+        console.log("Execution of function started..");
+        yield 100;
+        console.log("Printed after yield");
+        return 200;
+      }
+
+      const itr = Generator();
+      console.log(itr.next());
+      console.log(itr.next());
+
+      //   for (const i of arr) {
+      //     console.log(i);
+      //   }
+
+      //   let obj = { name: "XYZ", age: 12 };
+      //   for (const p of obj) {
+      //     console.log(p)
+      //   }
+    </script>
+  </head>
+  <body></body>
+</html>

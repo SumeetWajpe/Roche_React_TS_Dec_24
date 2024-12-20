@@ -4,6 +4,7 @@ import ListOfCourses from "../listofcourses/listofcourses";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Navbar from "../navbar/navbar";
 import CourseDetails from "../coursedetails/coursedetails";
+import NewCourse from "../newcourse/newcourse";
 // import NewCourse from "../newcourse/newcourse";
 
 const App: React.FC = () => {
@@ -12,7 +13,7 @@ const App: React.FC = () => {
       <Navbar />
       <Routes>
         <Route path="/" Component={ListOfCourses}></Route>
-        {/* <Route path="/newcourse" Component={NewCourse}></Route> */}
+        <Route path="/newcourse" Component={NewCourse}></Route>
         <Route path="/coursedetails/:cid" Component={CourseDetails}></Route>
 
         <Route

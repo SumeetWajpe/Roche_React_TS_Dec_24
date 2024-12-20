@@ -8,9 +8,7 @@ import { AppState } from "../../redux/store/store";
 const CourseDetails: React.FC = () => {
   const { cid } = useParams(); // hook
 
-  const courses: CourseModel[] = useSelector<AppState>(
-    store => store.courses,
-  ) as CourseModel[];
+  const courses = useSelector((store: AppState) => store.courses);
   const theCourse = courses.find((c: CourseModel) => c.id == Number(cid));
 
   return (
