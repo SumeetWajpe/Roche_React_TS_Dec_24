@@ -62,8 +62,13 @@ const coursesSlice = createSlice({
   name: "courses",
   initialState,
   reducers: {
-    IncrementLikes: (store, action) => {
-      return store; // updated store
+    IncrementLikes: (store, action: any) => {
+      let courseId = action.payload;
+      // store => immutable
+      //return store; // updated store
+      let index = store.findIndex(c => c.id == courseId);
+      store[index].likes++; // immer allows us to mutate the store and it creates a newer store object
+      return store;
     },
   },
 });
