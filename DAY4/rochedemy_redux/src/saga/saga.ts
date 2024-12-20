@@ -1,8 +1,8 @@
 import axios from "axios";
 import { call, put, takeLatest } from "redux-saga/effects";
 import { CourseModel } from "../models/course.model";
-
-// worker saga
+import { SagaActions } from "./sagaactions";
+import { SetAllCourses } from "../redux/reducers/courses.reducer";
 
 function GetAllCourses() {
   return axios
@@ -10,10 +10,12 @@ function GetAllCourses() {
     .then(res => res.data);
 }
 
+// worker saga
 function* fetchCourses() {
   try {
     const courses: CourseModel[] = yield call(GetAllCourses);
-    yield put();
+    // console.log(courses);
+    yield put(SetAllCourses(courses));
   } catch (err) {
     console.log(err);
   }
@@ -21,5 +23,5 @@ function* fetchCourses() {
 
 // root/watcher saga
 export function* mySaga() {
-  yield takeLatest("FETCH_COURSES_ASYNC", fetchCourses);
+  yield takeLatest(SagaActions.FETCH_COURSES_ASYNC, fetchCourses);
 }

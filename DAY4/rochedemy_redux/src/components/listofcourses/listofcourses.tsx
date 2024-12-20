@@ -1,9 +1,17 @@
+import { useEffect } from "react";
 import { CourseModel } from "../../models/course.model";
+import { SagaActions } from "../../saga/sagaactions";
 import Course from "../course/course";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 const ListOfCourses: React.FC = () => {
+  const dispatch = useDispatch();
+
   const courses = useSelector((store: any) => store.courses);
+
+  useEffect(() => {
+    dispatch({ type: SagaActions.FETCH_COURSES_ASYNC });
+  }, []);
   return (
     <div className="row">
       {courses.map((course: CourseModel) => (
