@@ -14,6 +14,10 @@ const ListOfCourses: React.FC = () => {
   }, []);
   return (
     <div className="row">
+      {/* <button onClick={()=>{
+    dispatch({ type: SagaActions.FETCH_COURSES_ASYNC });
+
+      }}>Get Courses !</button> */}
       {courses.map((course: CourseModel) => (
         <Course key={course.id} coursedetails={course} />
       ))}
