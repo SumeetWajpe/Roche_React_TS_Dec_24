@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { CourseModel } from "../../models/course.model";
 
 let initialState: CourseModel[] = [
@@ -62,13 +62,12 @@ const coursesSlice = createSlice({
   name: "courses",
   initialState,
   reducers: {
-    IncrementLikes: (store, action: any) => {
+    IncrementLikes: (store: CourseModel[], action: PayloadAction<number>) => {
       let courseId = action.payload;
       // store => immutable
-      //return store; // updated store
       let index = store.findIndex(c => c.id == courseId);
       store[index].likes++; // immer allows us to mutate the store and it creates a newer store object
-      return store;
+      return store; // updated store
     },
   },
 });

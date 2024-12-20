@@ -2,6 +2,7 @@ import { useDispatch } from "react-redux";
 import { CourseModel } from "../../models/course.model";
 import { Rating } from "../rating/rating";
 import { IncrementLikes } from "../../redux/reducers/courses.reducer";
+import { Link } from "react-router-dom";
 
 type CourseProps = {
   coursedetails: CourseModel;
@@ -11,13 +12,15 @@ const Course: React.FC<CourseProps> = (props: CourseProps) => {
   return (
     <div className="col-md-3">
       <div className="card m-2 p-2 shadow rounded-0">
-        <img
-          src={props.coursedetails.imageUrl}
-          className="card-img-top"
-          alt="..."
-          width="150px"
-          height="150px"
-        />
+        <Link to={`/coursedetails/${props.coursedetails.id}`}>
+          <img
+            src={props.coursedetails.imageUrl}
+            className="card-img-top"
+            alt="..."
+            width="150px"
+            height="150px"
+          />
+        </Link>
 
         <div className="card-body">
           <h5 className="card-title">{props.coursedetails.title}</h5>
@@ -27,9 +30,7 @@ const Course: React.FC<CourseProps> = (props: CourseProps) => {
           <p className="card-text">₹. {props.coursedetails.price}</p>
           <button
             className="btn btn-outline-primary"
-            onClick={() =>
-              dispatch(IncrementLikes(props.coursedetails.id as any))
-            }
+            onClick={() => dispatch(IncrementLikes(props.coursedetails.id))}
           >
             {props.coursedetails.likes}{" "}
             <i className="fa-regular fa-thumbs-up"></i>
