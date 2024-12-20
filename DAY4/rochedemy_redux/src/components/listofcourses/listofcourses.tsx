@@ -10,9 +10,14 @@ const ListOfCourses: React.FC = () => {
   const courses = useSelector((store: any) => store.courses);
 
   useEffect(() => {
+    // if (courses.length == 0) {
     dispatch({ type: SagaActions.FETCH_COURSES_ASYNC });
+    // }
   }, []);
-  return (
+
+  return courses.length == 0 ? (
+    "Loading.."
+  ) : (
     <div className="row">
       {/* <button onClick={()=>{
     dispatch({ type: SagaActions.FETCH_COURSES_ASYNC });
